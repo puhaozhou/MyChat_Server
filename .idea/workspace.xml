@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f78ca56-e57b-4b15-95cc-a32e65a6e1af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyChat_Client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyChat_Tools.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyChat_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MyChat_Client">
+  <component name="RunManager" selected="Python.MyChat_Server">
     <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyChat-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,7 +177,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565771575381</updated>
       <workItem from="1565771579476" duration="26481000" />
-      <workItem from="1565925654792" duration="14298000" />
+      <workItem from="1565925654792" duration="19492000" />
     </task>
     <task id="LOCAL-00001" summary="多线程">
       <created>1565929339732</created>
@@ -189,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565929339733</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试客户端">
+      <created>1565941672926</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565941672926</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,13 +214,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="多线程" />
-    <option name="LAST_COMMIT_MESSAGE" value="多线程" />
+    <MESSAGE value="测试客户端" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试客户端" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyChat_Server$Server.coverage" NAME="Server Coverage Results" MODIFIED="1565850726277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Server.coverage" NAME="MyChat_Server Coverage Results" MODIFIED="1565938912430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Server.coverage" NAME="MyChat_Server Coverage Results" MODIFIED="1565946070888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client.coverage" NAME="Client Coverage Results" MODIFIED="1565850729962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1565938954304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1565946083627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client2.coverage" NAME="Client2 Coverage Results" MODIFIED="1565847675256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

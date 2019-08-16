@@ -10,6 +10,7 @@ desc:p2p communication serverside
 import socket
 import threading
 from MyChat_Tools import Tools
+import json
 
 connLst = []  # 用户连接表，有几个用户连接，就会有几个websocket对象
 
@@ -57,19 +58,21 @@ def handler_msg(conn,addr):
             if data_recv[0:1] == b"\x81":
                 data_parse = tools.get_data(data_recv)
                 print(data_parse)
-            # try:
-            #     dataobj = json.loads(data_parse.decode('utf-8'))
-            # except IOError:
-            #     print(str("data1 is null"))
-            #     continue
+            try:
+                data_parse = json.loads(data_parse)
+            except IOError:
+                print(str("json conversion failed"))
+                continue
+            print(type(data_parse))
             if type(data_parse) == list and not registered:
+                print('registering')
                 account = data_parse[0]
                 password = data_parse[1]
                 conObj = Connector(account, password, addr, conn)
                 connLst.append(conObj)
                 registered = True
                 continue
-            # print(str(connLst).encode('utf-8'))
+            print(str(connLst).encode('utf-8'))
             # 如果目标客户端在发送数据给目标客服端
             if len(connLst) > 1 and type(data_parse) == dict:  # 注册用户大于1
                 sendok = False
@@ -77,7 +80,8 @@ def handler_msg(conn,addr):
                     if data_parse['to'] == obj.account:
                         # obj.conObj.sendall(data)  # 向目标用户发送数据
                         # send_msg(obj.conObj, bytes(data, encoding="utf-8"))
-                        tools.send_msg(obj.conObj, bytes("recv: {}".format(data_parse), encoding="utf-8"))
+                        datastr = json.dumps(data_parse)
+                        tools.send_msg(obj.conObj, bytes(datastr, encoding="utf-8"))
                         sendok = True
                 if not sendok:
                     print('no target valid!')
