@@ -38,7 +38,7 @@ class MyServer(socketserver.BaseRequestHandler):
                 password = dataobj[1]
                 conObj = Connector(account, password, self.client_address, self.request)
                 connLst.append(conObj)
-                register = True
+                registered = True
                 continue
             # 如果目标客户端在发送数据给目标客服端
             if len(connLst) > 1 and type(dataobj) == dict:  # 注册用户大于1
