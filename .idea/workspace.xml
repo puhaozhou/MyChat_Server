@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f78ca56-e57b-4b15-95cc-a32e65a6e1af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MyChat_Client2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyChat_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyChat_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Server.py" afterDir="false" />
@@ -30,6 +31,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\git\MyChat-Server\Test" />
       <recent name="C:\git\MyChat-Server" />
     </key>
   </component>
@@ -45,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.MyChat_Server">
+  <component name="RunManager" selected="Python.MyChat_Client2">
     <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MyChat-Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -59,29 +61,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Client.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Client2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MyChat-Server" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Client2.py" />
+      <option name="SCRIPT_NAME" value="C:\git\MyChat-Server\Test\Client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,6 +84,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyChat_Client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MyChat_Client2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MyChat-Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MyChat_Client2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +149,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Server.py" />
+      <option name="SCRIPT_NAME" value="C:\git\MyChat-Server\Test\Server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,9 +162,9 @@
       <list>
         <item itemvalue="Python.MyChat_Client" />
         <item itemvalue="Python.MyChat_Server" />
+        <item itemvalue="Python.MyChat_Client2" />
         <item itemvalue="Python.Client" />
         <item itemvalue="Python.Server" />
-        <item itemvalue="Python.Client2" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +179,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565771575381</updated>
       <workItem from="1565771579476" duration="26481000" />
-      <workItem from="1565925654792" duration="19492000" />
+      <workItem from="1565925654792" duration="43980000" />
     </task>
     <task id="LOCAL-00001" summary="多线程">
       <created>1565929339732</created>
@@ -193,7 +195,21 @@
       <option name="project" value="LOCAL" />
       <updated>1565941672926</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="与客户端建立连接">
+      <created>1565946997076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565946997077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改服务端设置">
+      <created>1566270133622</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566270133622</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,13 +231,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="多线程" />
     <MESSAGE value="测试客户端" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试客户端" />
+    <MESSAGE value="与客户端建立连接" />
+    <MESSAGE value="修改服务端设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改服务端设置" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyChat_Server$Server.coverage" NAME="Server Coverage Results" MODIFIED="1565850726277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Server.coverage" NAME="MyChat_Server Coverage Results" MODIFIED="1565946070888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Server.coverage" NAME="MyChat_Server Coverage Results" MODIFIED="1566274717806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client2.coverage" NAME="MyChat_Client2 Coverage Results" MODIFIED="1566274285675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client.coverage" NAME="Client Coverage Results" MODIFIED="1565850729962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1565946083627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1566274764065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client2.coverage" NAME="Client2 Coverage Results" MODIFIED="1565847675256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

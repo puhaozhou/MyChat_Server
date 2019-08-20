@@ -15,12 +15,12 @@ import asyncio
 import websockets
 
 STATE = {"value": 0}
-UserList = []  # 用户连接表，有几个用户连接，就会有几个websocket对象
-HistoryMessage = []  #历史消息
+UserList = []  # an array used to store user object
+Suspended_Message = []  # an array used to store messages that need to be suspended
 
 
-##  连接列表，用来保存一个连接的信息（代号 地址和端口 连接对象）
-class Connector(object):  # 连接对象类
+# a class of connected users, which consists of user's account, password and connection
+class Connector(object):
     def __init__(self, account, password, conObj):
         self.account = account
         self.password = password
@@ -40,7 +40,12 @@ async def register(data, websocket):
     print(data)
     reply = {"from": "server", "msg": "registered"}
     reply = json.dumps(reply)
-    await websocket.send(reply)
+    try:
+        await websocket.send(reply)
+        result = True
+    except:
+        result = False
+    return result
 
 
 async def handler_accept(websocket, path):
@@ -57,31 +62,50 @@ async def unregister(websocket):
             UserList.remove(user)
 
 
+async def send_suspended_msg(websocket, current_user):
+    for msg in Suspended_Message:
+        if msg["to"] == current_user:
+            suspended_msgstr = json.dumps(msg)
+            await websocket.send(suspended_msgstr)
+            Suspended_Message.remove(msg)
+
+
 async def handler_msg(websocket):
     try:
         while True:
             data = await websocket.recv()
             dataobj = json.loads(data)
-            if type(dataobj) == list:  # 是否是注册请求
+            # check whether this message is a register request message
+            if type(dataobj) == list:
                 is_user_registered = filter(lambda x: x.account == dataobj[0], UserList)
-                if not any(is_user_registered):  # 判断是否已经注册
-                    await register(dataobj, websocket)
-                    print(str(UserList).encode('utf-8'))
-                else:  # 已存在该用户断开连接
+                # check whether current user has registered, if not, then register
+                if not any(is_user_registered):
+                    is_register_successful = await register(dataobj, websocket)
+                    # print(str(UserList).encode('utf-8'))
+                    has_suspended_msg = filter(lambda x: x["to"] == dataobj[0], Suspended_Message)
+                    # check whether this newly-registered user has suspended messages
+                    if is_register_successful and any(has_suspended_msg):
+                        await send_suspended_msg(websocket, dataobj[0])
+                # if the user already exists
+                else:
                     reply = {"from": "server", "msg": "this account has been registered, please use another one!"}
                     reply = json.dumps(reply)
                     await websocket.send(reply)
                     break
-            elif len(UserList) > 1 and type(dataobj) == dict:  # 注册用户大于1
+            # if there exists at least one user who is online, and the type of the message is a normal chat
+            # message
+            elif len(UserList) >= 1 and type(dataobj) == dict:
                 is_send_successful = False
                 for user in UserList:
                     if dataobj['to'] == user.account:
-                        datastr = json.dumps(dataobj)
-                        print(datastr)
-                        await user.conObj.send(datastr)
+                        new_msgstr = json.dumps(dataobj)
+                        print(new_msgstr)
+                        await user.conObj.send(new_msgstr)
                         is_send_successful = True
+                # if the target user does not exist, then store this message in
+                # suspended_message
                 if not is_send_successful:
-                    HistoryMessage.append(dataobj)
+                    Suspended_Message.append(dataobj)
                     reply = {"from": "server", "msg": "sending message failed"}
                     reply = json.dumps(reply)
                     await websocket.send(reply)
