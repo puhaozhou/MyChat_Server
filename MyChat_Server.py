@@ -1,106 +1,102 @@
 # coding:utf-8
 '''
-file:server.py
-date:2017/9/10 12:43
-author:lockey
-email:lockey@123.com
-platform:win7.x86_64 pycharm python3
+file:MyChat_Server.py
+date:2019/8/19
+author:Mark
+email:puhaozhou@163.com
+platform:win10.x86_64 pycharm python3
 desc:p2p communication serverside
 '''
 import socket
 import threading
 from MyChat_Tools import Tools
 import json
+import asyncio
+import websockets
 
-connLst = []  # 用户连接表，有几个用户连接，就会有几个websocket对象
+STATE = {"value": 0}
+UserList = []  # 用户连接表，有几个用户连接，就会有几个websocket对象
+HistoryMessage = []  #历史消息
 
 
 ##  连接列表，用来保存一个连接的信息（代号 地址和端口 连接对象）
 class Connector(object):  # 连接对象类
-    def __init__(self, account, password, addrPort, conObj):
+    def __init__(self, account, password, conObj):
         self.account = account
         self.password = password
-        self.addrPort = addrPort
         self.conObj = conObj
 
 
-def handler_accept(sock):
-    while True:
-        conn, addr = sock.accept()
-        data = conn.recv(8096) #接收握手请求
-        print("got connection from", addr)
-        # 对请求头中的sec-websocket-key进行加密
-        response_tpl = "HTTP/1.1 101 Switching Protocols\r\n" \
-                       "Upgrade:websocket\r\n" \
-                       "Connection: Upgrade\r\n" \
-                       "Sec-WebSocket-Accept: %s\r\n" \
-                       "WebSocket-Location: ws://%s\r\n\r\n"
-        # print(data)
-        headers = tools.get_headers(data)
-        # 对请求头中的sec-websocket-key进行加密
-        # print(headers)
-        value = headers['Sec-WebSocket-Key']
-        token = tools.generate_token(value)
-        # print(token)
-        # print(headers['Host'])
-        response_str = response_tpl % (token.decode('utf-8'), headers['Host'])
-        conn.sendall(bytes(response_str, encoding='utf-8'))  #建立握手
-        t = threading.Thread(target=handler_msg, args=(conn,addr)) #开始通信
-        t.start()
+def state_event():
+    return json.dumps({"type": "state", **STATE})
 
 
-def handler_msg(conn,addr):
-    with conn as c:
-        registered = False  # 未注册
+async def register(data, websocket):
+    print('registering')
+    account = data[0]
+    password = data[1]
+    conObj = Connector(account, password, websocket)
+    UserList.append(conObj)
+    print(data)
+    reply = {"from": "server", "msg": "registered"}
+    reply = json.dumps(reply)
+    await websocket.send(reply)
+
+
+async def handler_accept(websocket, path):
+    print("got connection from", websocket)
+    reply = {"from": "server", "msg": "connected"}
+    reply = json.dumps(reply)
+    await websocket.send(reply)
+    await handler_msg(websocket)
+
+
+async def unregister(websocket):
+    for user in UserList:
+        if user.conObj == websocket:
+            UserList.remove(user)
+
+
+async def handler_msg(websocket):
+    try:
         while True:
-            data_recv = c.recv(8096)
-            print(data_recv)
-            if data_recv[0:1] == b"\x81":
-                data_parse = tools.get_data(data_recv)
-                print(data_parse)
-            try:
-                data_parse = json.loads(data_parse)
-            except IOError:
-                print(str("json conversion failed"))
-                continue
-            print(type(data_parse))
-            if type(data_parse) == list and not registered:
-                print('registering')
-                account = data_parse[0]
-                password = data_parse[1]
-                conObj = Connector(account, password, addr, conn)
-                connLst.append(conObj)
-                registered = True
-                continue
-            print(str(connLst).encode('utf-8'))
-            # 如果目标客户端在发送数据给目标客服端
-            if len(connLst) > 1 and type(data_parse) == dict:  # 注册用户大于1
-                sendok = False
-                for obj in connLst:
-                    if data_parse['to'] == obj.account:
-                        # obj.conObj.sendall(data)  # 向目标用户发送数据
-                        # send_msg(obj.conObj, bytes(data, encoding="utf-8"))
-                        datastr = json.dumps(data_parse)
-                        tools.send_msg(obj.conObj, bytes(datastr, encoding="utf-8"))
-                        sendok = True
-                if not sendok:
-                    print('no target valid!')
+            data = await websocket.recv()
+            dataobj = json.loads(data)
+            if type(dataobj) == list:  # 是否是注册请求
+                is_user_registered = filter(lambda x: x.account == dataobj[0], UserList)
+                if not any(is_user_registered):  # 判断是否已经注册
+                    await register(dataobj, websocket)
+                    print(str(UserList).encode('utf-8'))
+                else:  # 已存在该用户断开连接
+                    reply = {"from": "server", "msg": "this account has been registered, please use another one!"}
+                    reply = json.dumps(reply)
+                    await websocket.send(reply)
+                    break
+            elif len(UserList) > 1 and type(dataobj) == dict:  # 注册用户大于1
+                is_send_successful = False
+                for user in UserList:
+                    if dataobj['to'] == user.account:
+                        datastr = json.dumps(dataobj)
+                        print(datastr)
+                        await user.conObj.send(datastr)
+                        is_send_successful = True
+                if not is_send_successful:
+                    HistoryMessage.append(dataobj)
+                    reply = {"from": "server", "msg": "sending message failed"}
+                    reply = json.dumps(reply)
+                    await websocket.send(reply)
             else:
-                # conn.sendall('nobody recevied!'.encode('utf-8'))
-                tools.send_msg(conn, bytes('nobody recevied!', encoding="utf-8"))
-                continue
-
-
-def server_socket():
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    sock.bind(("127.0.0.1", 8023))
-    sock.listen(5)
-    t = threading.Thread(target=handler_accept(sock))
-    t.start()
+                reply = {"from": "server", "msg": "nobody recevied!"}
+                reply = json.dumps(reply)
+                await websocket.send(reply)
+    except:
+        print("connection is closed")
+    finally:
+        await unregister(websocket)
 
 
 if __name__ == '__main__':
     print('waiting for connection...')
-    tools = Tools()
-    server_socket()
+    start_server = websockets.serve(handler_accept, "127.0.0.1", 8023)
+    asyncio.get_event_loop().run_until_complete(start_server)
+    asyncio.get_event_loop().run_forever()
