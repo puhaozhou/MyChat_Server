@@ -2,10 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f78ca56-e57b-4b15-95cc-a32e65a6e1af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MyChat_Client2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/MyChat_TestServer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyChat_Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyChat_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/LICENSE.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask-1.1.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/DESCRIPTION.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/Flask_Sockets-0.2.1.dist-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/__main__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/_compat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/blueprints.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/ctx.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/debughelpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/globals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/helpers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/json/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/json/tag.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/logging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/sessions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/signals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/templating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/testing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask/wrappers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lib/site-packages/flask_sockets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat_Tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/MyChat_Tools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/flask.exe" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +214,7 @@
       <option name="presentableId" value="Default" />
       <updated>1565771575381</updated>
       <workItem from="1565771579476" duration="26481000" />
-      <workItem from="1565925654792" duration="43980000" />
+      <workItem from="1565925654792" duration="52412000" />
     </task>
     <task id="LOCAL-00001" summary="多线程">
       <created>1565929339732</created>
@@ -209,11 +244,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566270133622</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add suspended message function">
+      <created>1566275202295</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566275202295</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -233,14 +285,15 @@
     <MESSAGE value="测试客户端" />
     <MESSAGE value="与客户端建立连接" />
     <MESSAGE value="修改服务端设置" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改服务端设置" />
+    <MESSAGE value="add suspended message function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add suspended message function" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyChat_Server$Server.coverage" NAME="Server Coverage Results" MODIFIED="1565850726277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Server.coverage" NAME="MyChat_Server Coverage Results" MODIFIED="1566274717806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client2.coverage" NAME="MyChat_Client2 Coverage Results" MODIFIED="1566274285675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client.coverage" NAME="Client Coverage Results" MODIFIED="1565850729962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1566274764065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MyChat_Server$MyChat_Client.coverage" NAME="MyChat_Client Coverage Results" MODIFIED="1566281027916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MyChat_Server$Client2.coverage" NAME="Client2 Coverage Results" MODIFIED="1565847675256" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
