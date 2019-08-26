@@ -2,7 +2,6 @@
 
 from socket import *
 import threading, sys, json, re
-from MyChat_Tools import Tools
 from websocket import create_connection
 
 HOST = '127.0.0.1'  ##
